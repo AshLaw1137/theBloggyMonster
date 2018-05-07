@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ThirdPage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style media="screen">
+    body{
+      margin: 0;
+      background-image: url(http://longwallpapers.com/Desktop-Wallpaper/funny-cartoon-wallpaper-hd-For-Desktop-Wallpaper.jpg);
+    }
+    nav{
+      background-color: #333;
+      color:#c3c0c0;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      position: fixed;
+      width:100%;
+      margin-left: 0px;
+    }
+    a{
+      color: inherit;
+    }
+    img{
+      width:100px;
+    }
+    #body{
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 2px;
+      text-decoration: underline;
+    }
+    #body:hover{
+      text-align: center;
+      padding-top: 10px;
+      background-color: #333;
+      color:#2f58e7;
+      text-decoration: none;
+    }
+    #move {
+    width: auto;
+    height: auto;
+    background-color: #333;
+    position: relative;
+    animation-name: shake;
+    animation-duration: 4s;
+    animation-iteration-count: 100;
+    border-radius: 15px;
+    }
+  #move:hover{
+    color: gold;
+    background-color: blue;
+    border-color: gold;
+    }
+
+/* Safari 4.0 - 8.0 */
+  @-webkit-keyframes shake {
+      0%   {background-color:#333; left:0px; top:0px;}
+      25%  {background-color:#333; left:200px; top:0px;}
+      50%  {background-color:#333; left:200px; top:200px;}
+      75%  {background-color:#333; left:0px; top:200px;}
+      100% {background-color:#333; left:0px; top:0px;}
+    }
+    .container{
+      background-color: #333;
+      color: #fdc200;
+      border-radius: 10px;
+      margin-top: 300px;
+      text-align: center;
+      padding-bottom: 15px;
+      padding-top: 5px;
+    }
+    label, input{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #login{
+      border-radius: 15px;
+    }
+    .haha{
+      background-color: #333;
+      color: #fdc200;
+      border-radius: 15px;
+    }
+    .notice1{
+      background-color: black;
+      border-radius: 15px;
+      color: green;
+    }
+    .notice2{
+      background-color: black;
+      border-radius: 15px;
+      color: red;
+    }
+    .haha{
+      text-align: center;
+      padding-top: 25px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="head">
+      <nav class="navbar">
+        <h1 style="width:300px; margin-right:0px;">TheBloggyMonster</h1>
+        <img src="https://abs.twimg.com/hashflags/killmonger_blackpanther/killmonger_blackpanther.png" alt="">
+        <button type="button" id="signup" class="btn btn-outline-warning">
+          <a href="http://127.0.0.1:8080/blog-sign-up.html">Sign up</a>
+        </button>
+        <button id="hidden" style="display:hide"><a href="http://127.0.0.1:8080/blog-posts-and-stuff.html">Go To Posts</a></button>
+      </nav>
+      <div id="body">
+        <h1>Login:</h1>
+        <h2 id="change"></h2>
+        <p class="notice1"></p>
+        <p class="notice2"></p>
+      </div>
+      <div class="haha">
+        <p>HAHAHA.. did you think it would be that easy? <b>NO!</b></p>
+        <p>To login, you'll have to catch our login button HAHAHAHAHA (villainous laughing)</p>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"type="button" id="move">Login</button>
+      </div>
+    </div>
+    <!-- the pop-up login form -->
+    <div id="id01" class="modal">
+      <form id="log" method="post">
+      <div class="container">
+        <label for="uemail"><b>Email adress</b></label>
+        <input type="text" placeholder="Enter Username" name="uemail" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button id="login" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $('#log').submit(function(event){
+    event.preventDefault();
+
+    let email = $('input[name="uemail"]').val();
+    let password = $('input[name="psw"]').val();
+
+    $.getJSON('http://localhost:3000/users?email='+email, function(data){
+      if(data.length >0){
+        let user_db_password = data[0].password;
+
+        if (user_db_password = password){
+          $('.notice1').html('Login Successful! :)').show();
+        }else if (user_db_password != password){
+            $('.notice2').html('Incorrect Password! :)').show();
+          }
+      }
+    })
+  });
+});
+</script>
+  </body>
+</html>

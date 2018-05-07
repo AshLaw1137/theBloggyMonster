@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SecondPage</title>
+    <style media="screen">
+      body{
+        background-image: url(https://funnypicture.org/wallpaper/2015/05/funny-cartoon-cat-3-background.jpg);
+        text-align: center;
+        font-family: sans-serif;
+        color: #c3c0c0;
+        padding-bottom:15px;
+      }
+      input{
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      label{
+        color:black;
+      }
+      form{
+        margin-top: 420px;
+        margin-bottom: 5px;
+        background-color: white;
+        border-radius: 15px;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 15px;
+      }
+      input, label{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+      }
+      .navbar{
+        width:100%;
+        background-color: #333;
+        border-radius: 15px;
+        padding: 1px;
+        position:fixed;
+        top: 0;
+      }
+      button{
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="everything">
+      <nav class="navbar">
+        <h1>Awesomenessness!!!</h1>
+        <h2>So you've decided to Sign Up, horrible choice, but we're happy that you're here!</h2>
+      </nav>
+      <div class="notice"></div>
+      <div>
+          <form id="form" method="post">
+            <label for="name">Fist Name</label>
+            <input type="text" onfocus="this.value=' '" name="first-name" value="Your First name">
+            <label for="surname">Last Name</label>
+            <input type="text" onfocus="this.value=' '" name="last-name" value="Your Last name">
+            <label for="email">Email Adress</label>
+            <input type="text" onfocus="this.value=' '" name="email-adress" value="example@bloggyMon.com">
+            <label for="password">Password</label>
+            <input type="text" onfocus="this.value=' '" name="password" value="********">
+            <button type="submit">Submit Info</button>
+          </form>
+      </div>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $('#form').submit(function(event){
+      event.preventDefault()
+
+      let first_name = $('input[name="first-name"]').val();
+      let last_name = $('input[name="last-name"]').val();
+      let email = $('input[name="email-adress"]').val();
+      let password = $('input[name="password"]').val();
+
+      $.ajax({  url: 'http://localhost:3000/users',
+        method: 'post',
+        dataType: 'JSON',
+        data: {
+          "first_name": first_name,
+          "last_name": last_name,
+          "email": email,
+          "password": password
+        }
+      }).done(function(){
+        alert('Hey there, ' +first_name+ ' Your User Info Has Been Stored And Created.')
+      });
+
+
+     });
+
+
+  });
+</script>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FourthPage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style media="screen">
+    body{
+      background-image: url(http://longwallpapers.com/Desktop-Wallpaper/funny-cartoon-wallpaper-hd-For-Desktop-Wallpaper.jpg);
+    }
+    input, button{
+      border-radius: 15px;
+      text-align: center;
+    }
+    h2{
+      font-weight: bold;
+    }
+    h3{
+      color:#7f030a;
+    }
+    nav{
+      background-color: #333;
+      color:#c3c0c0;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      position: fixed;
+      width:100%;
+      margin-left: 0px;
+      top:0;
+      left: 0;
+    }
+    img{
+      width:100px;
+      /* border-radius: 50%; */
+    }
+    .postings{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-top: 5px;
+      font-style: oblique;
+      font-family: sans-serif;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .postings:hover{
+      background-color: #262a2f;
+      margin-left: 200px;
+      margin-right: 200px;
+      border-radius: 15px;
+      color: grey;
+    }
+    .article1, .article2, .article3{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-top: 5px;
+      font-style: oblique;
+      font-family: sans-serif;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    div.article1:hover, div.article2:hover, div.article3:hover{
+      background-color: #262a2f;
+      margin-left: 200px;
+      margin-right: 200px;
+      border-radius: 15px;
+      color: grey;
+    }
+    #thePostDisplay:hover{
+      background-color: #262a2f;
+      margin-left: 200px;
+      margin-right: 200px;
+      border-radius: 15px;
+      color: grey;
+    }
+    #thePostDisplay{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-top: 5px;
+      font-style: oblique;
+      font-family: sans-serif;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 style="width:300px; margin-right:0px;">TheBloggyMonster</h1>
+      <img src="https://abs.twimg.com/hashflags/killmonger_blackpanther/killmonger_blackpanther.png" alt="">
+    </nav>
+    <div id="thePostDisplay">
+      <button id="postUp" type="button" name="button" class="btn btn-outline-warning">Display Posts?</button>
+      <button style="margin-top:1px;" class="btn btn-outline-warning" style="margin-bottom:15px" id="reset" type="reset" name="" value="Reset comments">Reset comments</button>
+    </div>
+    <div class"articles">
+
+      <!-- INTRO ARTICLE 1 -->
+      <div class="article1">
+        <h2>The greatest villain in Marvel history:</h2>
+        <h3>Erik 'Killmonger' Stevens.. <img src="https://abs.twimg.com/hashflags/killmonger_blackpanther/killmonger_blackpanther.png" alt="">
+        </h3>
+        <img style="height:500px; width:300px" src="https://static.comicvine.com/uploads/original/11134/111344385/6285632-original.jpeg" alt="killing">
+        <p>
+          is undeniably one of (if not THE greatest) greatest  Marvel villain in the history of Marvel villians, why?
+        </p>
+        <!-- remember to put adress for full-article 1 here -->
+        <button class="btn btn-outline-warning" id="1">Here's why:</button>
+      </div>
+      <hr>
+
+      <!-- INTRO ARTICLE 2 -->
+      <div class="article2">
+        <h2>The greatest (superhero) Marvel villian in history:</h2>
+        <h3>Wade 'Deadpool' Wilson..</h3>
+        <img style="height:500px; width:600px"  src="https://static.highsnobiety.com/wp-content/uploads/2017/03/04191825/deadpool-2-teaser-01.jpg" alt="skullpool">
+        <p>
+          is also undeniably one of the greatest villians in Marvel history, but how? How can we have yet another "GREATEST" villain after already crowning King Killmonger?
+          And to add to this , he is also technically a superhero? hmmm.. Oh well..
+        </p>
+        <!-- remember to put adress for full-article 1 here -->
+        <button class="btn btn-outline-warning" id="2">Here's why:</button>
+      </div>
+      <hr>
+
+      <!-- INTRO ARTICLE 3 -->
+      <div class="article3">
+        <h2>And the award for Greatest Superhero goes to..</h2>
+        <h3>Google😇</h3>
+        <img style="width:200px" src="http://icons.iconarchive.com/icons/franksouza183/fs/512/Apps-google-chrome-icon.png" alt="google">
+        <p>
+          So, yeah.. You were probably expecting some superhero like Pacman (yes he is a superhero), or Goku (a hero to almost every kid out there..) or Dracula🧛‍♂️ (he's a hero to anybody who made money out of vampire films.. and also to teenage girls #TwilightSucks)  or something right? Well, WRONG there is one simple reason why Google is the greatest Superhero ever:
+          I could tell you, or maybe you could just Google it😛👑
+        </p>
+        <!-- remember to put adress for full-article 1 here -->
+        <button class="btn btn-outline-warning" id="3">Here's why:</button>
+      </div>
+
+    <!-- Comments and posting section -->
+    <div style="margin-bottom:20px" class="postings">
+      <h3 style="color:grey">Comment?</h3>
+        <form id="postSubmit" method="post">
+          <input style="margin-bottom:5px; height:200px; width:300px;" type="text" name="body" onfocus="this.value=' '" value="Leave a comment?">
+          <input style="display:block; margin-left:auto; margin-right:auto" type="text" name="author" onfocus="this.value=' '" value="Written By:">
+          <button class="btn btn-outline-warning" style="margin-top: 10px" type="submit" name="submit">Submit Post</button>
+      </form>
+      <p>To view posts go to the top of the page, and click the "display posts" button</p>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#postSubmit').submit(function(event){
+      event.preventDefault();
+
+      let body = $('input[name="body"]').val();
+      let author = $('input[name="author"]').val();
+
+      $.ajax({
+        url: 'http://localhost:3000/posts',
+        method: 'post',
+        dataType: 'JSON',
+        data: {
+          "body" : body,
+          "author" : author
+        }
+      }).done(function(){
+        alert('Post Created! :)');
+      });
+      // display and hide posts buttons
+      $('#postUp').on('click', function(){
+        $.getJSON("http://localhost:3000/posts", function(posts){
+          for (post of posts){
+            $('#thePostDisplay').append('<h4>' +posts.body+ '</h4>');
+            $('#thePostDisplay').append('<p> by' +posts.author+ '<p>');
+          }
+        });
+
+        $('#reset').on('click', function(posts){
+          $('.postings').hide(posts);
+        });
+        $('#postUp').on('click', function(posts){
+          $('.postings').show(posts);
+        });
+      });
+    });
+  });
+
+  </script>
+</html>
