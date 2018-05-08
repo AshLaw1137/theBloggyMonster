@@ -63,7 +63,6 @@
       padding-left: 15px;
       padding-right: 15px;
     }
-
     div.article1:hover, div.article2:hover, div.article3:hover{
       background-color: #262a2f;
       margin-left: 200px;
@@ -89,6 +88,24 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+    .showPost:hover{
+      background-color: #262a2f;
+      margin-left: 200px;
+      margin-right: 200px;
+      border-radius: 15px;
+      color: grey;
+    }
+    .showPost{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-top: 5px;
+      font-style: oblique;
+      font-family: sans-serif;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
     </style>
   </head>
   <body>
@@ -100,6 +117,9 @@
       <button id="view" type="button" name="button" class="btn btn-outline-warning">Display Posts?</button>
       <button style="margin-top:1px;" class="btn btn-outline-warning" style="margin-bottom:15px" id="reset" type="reset" name="" value="Reset comments">Reset comments</button>
     </div>
+    <div class="showPost"></div>
+
+    <!-- the articles -->
     <div class"articles">
 
       <!-- INTRO ARTICLE 1 -->
@@ -159,10 +179,8 @@
   $(document).ready(function(){
     $('#postSubmit').submit(function(event){
       event.preventDefault();
-
       let body = $('input[name="body"]').val();
       let author = $('input[name="author"]').val();
-
       $.ajax({
         url: 'http://localhost:3000/posts',
         method: 'post',
@@ -174,24 +192,22 @@
       }).done(function(){
         alert('Post Created! :)');
       });
-
     // display and hide posts buttons
     $('#view').on('click', function(){
       $.getJSON("http://localhost:3000/posts", function(posts){
         for (post of posts){
-          $('#thePostDisplay').append('<h4>' +posts.body+ '</h4>');
-          $('#thePostDisplay').append('<p> by' +posts.author+ '<p>');
+          $('.showPost').append('<h4>' +posts.body+ '</h4>');
+          $('.showPost').append('<p> by ' +posts.author+ '<p>');
         }
       });
       $('#reset').on('click', function(posts){
-        $('#thePostDisplay').hide(posts);
+        $('.showPost').hide(posts);
       });
       $('#view').on('click', function(posts){
-        $('#thePostDisplay').show(posts);
+        $('.showPost').show(posts);
       });
     });
     });
   });
-
   </script>
 </html>
