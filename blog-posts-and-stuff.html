@@ -183,12 +183,11 @@
           $('#thePostDisplay').append('<p> by' +posts.author+ '<p>');
         }
       });
-
       $('#reset').on('click', function(posts){
-        $('.postings').hide(posts);
+        $('#thePostDisplay').hide(posts);
       });
       $('#view').on('click', function(posts){
-        $('.postings').show(posts);
+        $('#thePostDisplay').show(posts);
       });
     });
     });
