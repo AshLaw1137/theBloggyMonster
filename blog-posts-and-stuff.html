@@ -97,7 +97,7 @@
       <img src="https://abs.twimg.com/hashflags/killmonger_blackpanther/killmonger_blackpanther.png" alt="">
     </nav>
     <div id="thePostDisplay">
-      <button id="postUp" type="button" name="button" class="btn btn-outline-warning">Display Posts?</button>
+      <button id="view" type="button" name="button" class="btn btn-outline-warning">Display Posts?</button>
       <button style="margin-top:1px;" class="btn btn-outline-warning" style="margin-bottom:15px" id="reset" type="reset" name="" value="Reset comments">Reset comments</button>
     </div>
     <div class"articles">
@@ -174,22 +174,23 @@
       }).done(function(){
         alert('Post Created! :)');
       });
-      // display and hide posts buttons
-      $('#postUp').on('click', function(){
-        $.getJSON("http://localhost:3000/posts", function(posts){
-          for (post of posts){
-            $('#thePostDisplay').append('<h4>' +posts.body+ '</h4>');
-            $('#thePostDisplay').append('<p> by' +posts.author+ '<p>');
-          }
-        });
 
-        $('#reset').on('click', function(posts){
-          $('.postings').hide(posts);
-        });
-        $('#postUp').on('click', function(posts){
-          $('.postings').show(posts);
-        });
+    // display and hide posts buttons
+    $('#view').on('click', function(){
+      $.getJSON("http://localhost:3000/posts", function(posts){
+        for (post of posts){
+          $('#thePostDisplay').append('<h4>' +posts.body+ '</h4>');
+          $('#thePostDisplay').append('<p> by' +posts.author+ '<p>');
+        }
       });
+
+      $('#reset').on('click', function(posts){
+        $('.postings').hide(posts);
+      });
+      $('#view').on('click', function(posts){
+        $('.postings').show(posts);
+      });
+    });
     });
   });
 
