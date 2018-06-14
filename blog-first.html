@@ -11,7 +11,7 @@
     }
     nav{
       background-color: #333;
-      color:#c3c0c0;
+      color:#ddd;
       padding-top: 10px;
       padding-left: 10px;
       padding-bottom: 10px;
@@ -30,26 +30,31 @@
       border-bottom: 2px;
       display: none;
     }
-    #neck:hover{
-      background-color: #333;
-      color:#2f58e7;
-      padding-bottom: 2px;
-      padding-left: 15px;
-    }
     #neck{
       padding-left: 15px;
+      padding-top:2em;
+      margin-left:auto;
+      margin-right:auto;
+      /* text-align: center; */
     }
     #body{
       text-align: center;
       font-size: 5em;
+      display:grid;
+      grid-template-areas:
+      "div article aside";
+      height:200px;
     }
-    #body:hover{
-      text-align: center;
-      font-size: 10em;
-      color: #f6c200;
+    #div{
+        grid-area: div;
     }
-    .body{
-      text-align: center;
+    #article{
+        grid-area: article;
+    }
+    #aside{
+        grid-area: aside;
+    }
+    span{
       color: #f6c200;
     }
     .sign_in{
@@ -68,13 +73,20 @@
       </nav>
       <hr>
       <div id="neck">
-        <h2>Hey There!</h2>
-        <h2>To view our posts and articles</h2>
-        <p>Click the Sign Up Button in the top right corner</p>
+        <h2>Hi there! Welcome to the <span>TheBloggyMonster</span></h2>
+        <h3 style="color:#ddd">
+            The movie, series and novel blog that keeps you up-to-date on all your favourite 
+            villains.
+        </h3>
+        <div style="text-align: left">
+                <h3>To view our posts and articles</h3>
+                <p>Click the Sign Up Button in the top right corner</p>
+        </div>
       </div>
-      <div>
-        <p id="body">We Tricked You!</p>
-        <p class="body">You have to sign up to View, comment and Post😉😝.. My bad, your Bad..</p>
+      <div id="body">
+        <div id="div"></div>
+        <article id="article"></article>
+        <aside id="aside"></aside>
       </div>
       <div class="sign_in">
         <p>If you have already signed up? Go to our Login page by Clicking the "Sign in" button below:
@@ -86,9 +98,6 @@
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
 <script type="text/javascript">
-
-
-
 </script>
   </body>
 </html>
