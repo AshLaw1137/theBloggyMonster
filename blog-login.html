@@ -116,8 +116,11 @@
         <p class="notice2"></p>
       </div>
       <div class="haha">
-        <p>HAHAHA.. did you think it would be that easy? <b>NO!</b></p>
-        <p>To login, you'll have to catch our login button HAHAHAHAHA (villainous laughing)</p>
+        <p>
+            So, as this is a blog for villain fans. We felt it would be appropriate
+            to be a little cruel and make you chase the login button.. Ha Ha Ha.
+        </p>
+        <!-- <p><b>NO!</b></p> -->
         <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"type="button" id="move">Login</button>
       </div>
     </div>
@@ -143,7 +146,6 @@ $(document).ready(function(){
     event.preventDefault();
     let email = $('input[name="uemail"]').val();
     let password = $('input[name="psw"]').val();
-
     $.getJSON('http://localhost:3000/users', function(data){
       if(data.length >0){
         let user_db_password = data[0].password;
